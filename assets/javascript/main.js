@@ -22,14 +22,18 @@ console.log(eta);
 
 //sconto del 20% per i minorenni
 if(eta < 18){
-    let prezzo_km_minorenni= ((costo_chilometro * 20)/100);
+    let prezzo_km_minorenni= costo_chilometro - ((costo_chilometro * 20)/100);
     let somma_minorenni = prezzo_km_minorenni * distanza;
+    somma_minorenni = somma_minorenni.toFixed(2);
     console.log("Il costo totale è di " + somma_minorenni + " €");
 }else if (eta > 65){
-    let prezzo_km_anziani = ((costo_chilometro*40)/100);
+    let prezzo_km_anziani = costo_chilometro -((costo_chilometro*40)/100);
     let somma_anziani = prezzo_km_anziani * distanza;
+    somma_anziani = somma_anziani.toFixed(2);
     console.log("Il costo totale è di " + somma_anziani + " €");
 }else{
     let somma_senza_sconto=(costo_chilometro * distanza);
+    
+    somma_senza_sconto = somma_senza_sconto.toFixed(2);
     console.log("Il costo totale è di " + somma_senza_sconto + " €");
-}
+}     
